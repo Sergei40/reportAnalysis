@@ -1,0 +1,9 @@
+date:
+time:
+===== Содержимое файла настроек settings.ini=====
+[analysis]
+period=1               ;время анализа (в днях) от 1 до 365
+LensType=              ;тип линзы для анализа
+cutCount=              ;количество подрезок для статистического анализа
+===== Конец файла настроек settings.ini=====
+Type	date	cutCount	mid_lens_butt_up	mid_lens_butt_down	mid_xDop	mid_xDop_n
