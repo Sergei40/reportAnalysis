@@ -2,31 +2,38 @@
 #include "report.h"
 #include "counting.h"
 #include <QSettings>
-#include <QFileInfo>
+#include <QFile>
 //#include
 
 Analysis::Analysis(QString pathReport, QString pathIni)
 {
-    QFileInfo fileIni(pathIni);
-    QSettings settings(pathIni, QSettings::IniFormat);
-    //period = settings.value("period").toInt();
 
-    QFile file(path);
-    fileAnalysis(&file);
+    QSettings settings(pathIni, QSettings::IniFormat);
+    settings.beginGroup( "ANALYSIS" );
+    this->period = settings.value("period", 3).toUInt();
+    this->lensType = settings.value("lensType").toInt();
+    this->cutCount = settings.value("cutCount", 20).toUInt();
+    settings.endGroup();
+
+    this->fileReport.setFileName(pathReport);
+    fileAnalysis(&fileReport);
 }
 
-void Analysis::fileAnalysis(QFile *file)
+void Analysis::fileAnalysis(QFile* file)
 {
-    if (!file->open(QIODevice::ReadOnly | QIODevice::Text))
-        qFatal("the file cannot be opened");
-
-    Counting counting;
-    while (!file->atEnd()) {
-        QByteArray line = file->readLine();
-        if (isRightFormat(line)) {
-            //counting.calculateMid(line);
+    bool isOpen = file->open(QIODevice::ReadOnly | QIODevice::Text);
+    if (isOpen) {
+        Counting counting;
+        while (!file->atEnd()) {
+            QByteArray line = file->readLine();
+            if (isRightFormat(line)) {
+                //counting.calculateMid(line);
+            }
         }
     }
+        qFatal("the file cannot be opened");
+
+
     //Report report(counting.getMid);
     //report.write;
 }

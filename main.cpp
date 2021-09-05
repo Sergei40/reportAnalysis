@@ -11,9 +11,10 @@ int main(int argc, char *argv[])
     if (argc < 3) qFatal("enter the path to the file");
 
     QFileInfo report(argv[1]);
-    QFile settings(argv[2]);
+    QFileInfo settings(argv[2]);
 
-    if (report.exists() && report.isFile())
+    if (report.exists() && report.isFile() &&
+        settings.exists() && settings.isFile())
         Analysis analysis(argv[1], argv[2]);
     else
         qFatal("file does not exist");
