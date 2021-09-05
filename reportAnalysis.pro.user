@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.0, 2021-09-03T13:46:22. -->
+<!-- Written by QtCreator 5.0.0, 2021-09-06T00:45:39. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -240,6 +240,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">reportAnalysis2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Alpha/reportAnalysis/reportAnalysis.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Alpha/reportAnalysis/reportAnalysis.pro</value>
+    <value type="QString" key="RunConfiguration.Arguments">D:\Alpha\reportAnalysis\OtherFiles\settings.ini D:\Alpha\reportAnalysis\OtherFiles\COMMON_REPORT.txt</value>
     <value type="bool" key="RunConfiguration.Arguments.multi">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

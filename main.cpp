@@ -12,10 +12,16 @@ int main(int argc, char *argv[])
 
     QFileInfo report(argv[1]);
     QFileInfo settings(argv[2]);
-
+    bool isTxt = report.completeSuffix() == "txt";
+    bool isIni = settings.completeSuffix() == "ini";
     if (report.exists() && report.isFile() &&
-        settings.exists() && settings.isFile())
-        Analysis analysis(argv[1], argv[2]);
+        settings.exists() && settings.isFile()) {
+
+        if (isTxt && isIni)
+            Analysis analysis(argv[1], argv[2]);
+        else
+            Analysis analysis(argv[2], argv[1]);
+    }
     else
         qFatal("file does not exist");
 

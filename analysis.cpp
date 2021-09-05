@@ -2,6 +2,7 @@
 #include "report.h"
 #include "counting.h"
 #include <QSettings>
+#include <iostream>
 #include <QFile>
 //#include
 
@@ -26,11 +27,15 @@ void Analysis::fileAnalysis(QFile* file)
         Counting counting;
         while (!file->atEnd()) {
             QByteArray line = file->readLine();
+            qDebug((line));
             if (isRightFormat(line)) {
-                //counting.calculateMid(line);
+                qDebug("true/n");
             }
+
+                //counting.calculateMid(line);
         }
     }
+    else
         qFatal("the file cannot be opened");
 
 
