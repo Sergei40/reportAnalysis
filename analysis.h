@@ -12,8 +12,8 @@ public:
     bool isRightFormat(QString line);
 
 private:
-    unsigned int period; //время анализа (в днях) от 1 до 365
-    int lensType; //тип линзы для анализа
+    unsigned int period;   //время анализа (в днях) от 1 до 365
+    int lensType;          //тип линзы для анализа
     unsigned int cutCount; //количество подрезок для статистического анализа
     QFile fileReport;
 };

@@ -28,10 +28,11 @@ void Analysis::fileAnalysis(QFile* file)
         while (!file->atEnd()) {
             QByteArray line = file->readLine();
             qDebug((line));
-            if (isRightFormat(line)) {
+            if (isRightFormat(QString(line))) {
                 qDebug("true/n");
             }
-
+            else
+                qDebug("false/n");
                 //counting.calculateMid(line);
         }
     }
